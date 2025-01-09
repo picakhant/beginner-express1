@@ -1,3 +1,5 @@
+# Day 1
+
 # Set up Environment
 
 - npm init -y
@@ -28,4 +30,22 @@ node index.js
 
 ```javaScript
 app.get("/", (req, res, next) => res.send("Hello"))
+```
+
+# Day 2
+
+## Install NodeMon
+
+```bash
+npm i -D nodemon
+```
+
+```JSON
+ "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
 ```

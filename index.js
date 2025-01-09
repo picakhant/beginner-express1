@@ -1,24 +1,36 @@
 import express from "express";
 
-const server = express();
+const app = express();
 
-server.get("/", (request, response) => {
-  console.log("You Request to Server Root Dir");
-  response.send("Hello World");
+// middleawre fro json data
+app.use(express.json());
+
+const fakeData = {
+  id: 1,
+  name: "IPhone 11 pro",
+};
+
+app.get("/", (req, res) => {
+  return res.status(200).json(fakeData);
 });
 
-server.get("/about", (req, res) => {
-  res.send("Hello About");
+app.post("/", (req, res) => {
+  // data from req body
+  const { name } = req.body;
+  console.log("Request is  ", req);
+
+  // condition
+  if (!name) {
+    return res.status(400).json({ message: "Invalid Data" });
+  }
+
+  if (name.length < 2) {
+    return res.status(400).json({ message: "Name Must be at least 2 chars" });
+  }
+
+  return res.status(200).json({ message: "Ok" });
 });
 
-server.post("/post", (req, res) => {
-  res.send("You request to post route");
-});
-
-server.get("/*", (req, res) => {
-  res.send("Your page is not found, 404");
-});
-
-server.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(3000, () => {
+  console.log("App is running on port 3000");
 });
