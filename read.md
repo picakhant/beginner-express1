@@ -49,3 +49,4 @@ npm i -D nodemon
     "dev": "nodemon index.js"
   },
 ```
+Learn more on the [official website]([https://example.com](https://appwrite.io/docs/quick-starts/nextjs)).
