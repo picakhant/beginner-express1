@@ -49,3 +49,19 @@ npm i -D nodemon
     "dev": "nodemon index.js"
   },
 ```
+
+# Day 3
+
+## Middleware
+
+```javascript
+app.use(middleware) // use the middleware the whole app
+app.get("/route_name", (req, res, next) => {
+  // your logics
+  next()
+}, (req, res) => return res) // specific route
+```
+
+# Day4 & Day 5
+
+## Discuss what is relational database and prism set up
