@@ -49,6 +49,7 @@ npm i -D nodemon
     "dev": "nodemon index.js"
   },
 ```
+<<<<<<< HEAD
 
 # Day 3
 
@@ -130,3 +131,6 @@ server.post("/create-book", async (req, res) => {
   }
 });
 ```
+=======
+Learn more on the [official website]([https://example.com](https://appwrite.io/docs/quick-starts/nextjs)).
+>>>>>>> faeb3f4109af158a7cb99bfea212a0650940a29d
