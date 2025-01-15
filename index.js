@@ -1,12 +1,20 @@
 import express from "express";
 import prisma from "./prismaClient.js";
+import cors from "cors"
 
 const server = express();
 
 server.use(express.json());
+server.use(cors())
+
+const person = {
+  name: "Aric",
+  age: 20,
+  isStudent: false,
+};
 
 server.get("/", (req, res) => {
-  return res.status(200).json({ message: "ok" });
+  return res.status(200).json(person);
 });
 
 server.post("/create-book", async (req, res) => {
@@ -45,4 +53,4 @@ server.post("/create-book", async (req, res) => {
 
 //http://localhost:4000/creat-post
 
-server.listen(4000, () => console.log("Server is running on port 3000"));
+server.listen(3000, () => console.log("Server is running on port 3000"));
