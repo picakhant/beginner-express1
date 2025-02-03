@@ -1,10 +1,12 @@
 import prisma from "../prismaClient.js";
 
 export const createBook = async (req, res) => {
-  const { name, author, release, price } = req.body;
+  const { name, author, release, price, img } = req.body;
+
+
 
   try {
-    if (!name || !author || !release || !price) {
+    if (!name || !author || !release || !price || !img) {
       return res.status(400).json({ message: "Invalid Data!", isErr: true });
     }
 
@@ -25,6 +27,7 @@ export const createBook = async (req, res) => {
         author,
         price,
         release,
+        img
       },
     });
 
